@@ -1,0 +1,7 @@
+mixin button(item)
+  - const className = item.mod?`button--${item.mod}`:'' + item.class?item.mod?` ${item.class}`:item.class:'';
+  
+  if item.button
+    button(type=item.type?item.type:'submit' class=className).button=item.text
+  else
+    a(href=item.link target=item.target?item.target:'_self' className).button=item.text
